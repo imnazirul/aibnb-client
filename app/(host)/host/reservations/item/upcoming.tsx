@@ -1,0 +1,60 @@
+import Image from 'next/image';
+import React from 'react';
+import { toAssetUrl } from '../../../../../helpers/utils';
+import { useRouter } from 'next/navigation';
+
+const Upcoming = ({ bookings }) => {
+    const router = useRouter();
+    const pendingBookings = bookings?.docs?.filter(data => data?.status === 'pending') || [];
+
+    return (
+        <div>
+            {
+                pendingBookings.length === 0 ? (
+                    <div className='w-full my-[128px] mx-auto flex flex-col justify-center items-center'>
+                        <h4 className='text-h4 font-semibold'>You have no upcoming reservations</h4>
+                        <p className='text-p underline cursor-pointer'>See all reservations</p>
+                    </div>
+                ) : (
+                    <table className="w-full text-left mt-2 mb-6">
+                        <thead>
+                            <tr className="text-sm font-medium text-gray-700">
+                                <th className="py-3">Listing</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {pendingBookings?.map((data, index) => (
+                                data?.status === 'pending' && (
+                                    <tr key={index} className="text-sm text-gray-500 font-medium hover:bg-gray-50 cursor-pointer"
+                                        onClick={() => router.push(`/host/reservations/${data?.uid}`)}
+                                    >
+                                        <td className="py-2 flex gap-6 items-center">
+                                            <Image
+                                                height={700}
+                                                width={700}
+                                                src={toAssetUrl(data?.property?.images[0])}
+                                                className="h-16 w-20 object-cover mb-2 rounded-md"
+                                                alt=""
+                                            />
+                                            <p>{data?.property?.title}</p>
+                                        </td>
+                                        <td>
+                                            {data?.property?.location?.name}
+                                        </td>
+                                        <td className="capitalize">
+                                            {data?.status}
+                                        </td>
+                                    </tr>
+                                )
+                            ))}
+                        </tbody>
+                    </table>
+                )
+            }
+        </div>
+    );
+};
+
+export default Upcoming;

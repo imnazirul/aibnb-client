@@ -1,0 +1,104 @@
+.user-sidebar {
+  @apply px-5 py-6 rounded-sm md:min-w-60 lg:min-w-[350px] bg-[#ffffff] lg:flex flex-col hidden h-full border shadow-sm;
+
+  .list {
+    @apply mt-6 h-10  duration-200 border-b;
+  }
+}
+
+.account-setting {
+  @apply flex flex-col gap-y-10;
+  .account-item {
+    @apply flex items-center gap-4;
+    .account-body {
+      @apply flex flex-row justify-between border-b-2 w-full pb-5;
+      .account-label {
+        @apply text-main text-p;
+      }
+      span {
+        @apply text-secondaryText text-p2;
+      }
+      .edit-btn {
+        @apply text-left text-main text-c1 cursor-pointer;
+      }
+    }
+  }
+}
+
+.btn-none {
+  .ant-upload-wrapper .ant-upload-drag {
+    border: none !important;
+  }
+}
+
+.shadows {
+  box-shadow: 1px 1px 10px 0.3px rgb(209, 208, 208);
+}
+
+.profile-image {
+  .ant-modal-content {
+    padding: 0px !important;
+  }
+
+  .ant-modal-close {
+    left: 14px !important;
+    top: 14px !important;
+  }
+}
+
+.tax-form {
+  .ant-form-item-label {
+    display: none !important;
+  }
+}
+
+.forms {
+  .form-input {
+    @apply w-full border-black border-[1px] mb-0 #{!important};
+  }
+}
+.selected {
+  .ant-select {
+    border: 1px solid black !important;
+    padding: 23px 0px !important;
+  }
+}
+
+.payment-checkbox {
+  .ant-form-item {
+    margin-bottom: 0px !important;
+  }
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: black !important;
+}
+
+.ant-radio-checked .ant-radio-inner::after {
+  background-color: white !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  background-color: black !important;
+}
+
+.ant-radio-inner {
+  width: 18px !important;
+  height: 18px !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  border-color: black !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: black !important;
+}
+
+.ant-checkbox-inner {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.pay-scroll::-webkit-scrollbar {
+  width: 0px;
+}

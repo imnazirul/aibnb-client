@@ -1,0 +1,24 @@
+
+.react-tel-input .form-control {
+    padding-top: 27px !important;
+    padding-bottom: 27px !important;
+    width: 100% !important;
+}
+
+.email-input {
+    .ant-form-item {
+        margin-bottom: 16 !important;
+    }
+}
+
+.btn-phn-email {
+    @apply w-full bg-white text-main text-c1 py-3 border border-black flex justify-center items-center gap-2;
+}
+
+.btn-google {
+    @apply w-full mt-4 bg-white text-main border py-3 text-p1 border-black flex justify-center items-center gap-2;
+}
+
+.forget-password {
+    @apply flex text-black mt-4 hover:text-error underline text-p3 cursor-pointer;
+}
